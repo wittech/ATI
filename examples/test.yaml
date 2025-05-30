@@ -13,3 +13,6 @@
 - image: examples/images/giraffe.jpg
   text: "A close-up portrait of a giraffe’s head and long neck against a soft-focus woodland backdrop."  
   track: examples/tracks/giraffe.pth
+- image: examples/images/bear.jpg
+  text: "A brown bear lying in the shade beside a rock, resting on a bed of grass."
+  track: examples/tracks/bear.pth

@@ -12,12 +12,7 @@
 > [Angtian Wang](https://angtianwang.github.io/), [Haibin Huang](https://brotherhuang.github.io/), Jacob Zhiyuan Fang, [Yiding Yang](https://ihollywhy.github.io/), [Chongyang Ma](http://www.chongyangma.com/), 
 > <br>Intelligent Creation Team, ByteDance<br>
 
-<div align="center">
-   <video controls style="max-width:100%; height:auto;">
-      <source src="./assets/Teaser.mp4" type="video/mp4">
-      Your browser doesn’t support HTML5 video. Browser the video in assets/Teaser.mp4.
-   </video>
-</div>
+[![Watch the video](assets/thumbnail.jpg)](https://youtu.be/76jjPT0f8Hs)
 
 This is the repo for Wan2.1 ATI (Any Trajectory Instruction for Controllable Video Generation), a trajectory-based motion control framework that unifies object, local and camera movements in video generation. This repo is based on [Wan2.1 offical implementation](https://github.com/Wan-Video/Wan2.1).
 
@@ -56,12 +51,10 @@ Expected results:
 
   <tr>
     <td style="text-align: center; vertical-align: middle;">
-      <img src="assets/examples/00.jpg" alt="Image 1" style="height: 240px;">
+      <img src="assets/examples/00.jpg" alt="Image 0" style="height: 240px;">
     </td>
     <td style="text-align: center; vertical-align: middle;">
-      <video controls style="height: 240px; ">
-         <source src="./assets/examples/000_viz.mp4" type="video/mp4">
-      </video>
+      <img src="assets/examples/00.gif" alt="Image 0" style="height: 240px;">
     </td>
   </tr>
 
@@ -70,43 +63,44 @@ Expected results:
       <img src="assets/examples/01.jpg" alt="Image 1" style="height: 240px;">
     </td>
     <td style="text-align: center; vertical-align: middle;">
-      <video controls style="height: 240px; ">
-         <source src="./assets/examples/001_viz.mp4" type="video/mp4">
-      </video>
+      <img src="assets/examples/01.gif" alt="Image 1" style="height: 240px;">
     </td>
   </tr>
 
   <tr>
     <td style="text-align: center; vertical-align: middle;">
-      <img src="assets/examples/02.jpg" alt="Image 1" style="height: 160px;">
+      <img src="assets/examples/02.jpg" alt="Image 2" style="height: 160px;">
     </td>
     <td style="text-align: center; vertical-align: middle;">
-      <video controls style="height: 160px; ">
-         <source src="./assets/examples/002_viz.mp4" type="video/mp4">
-      </video>
+      <img src="assets/examples/02.gif" alt="Image 2" style="height: 160px;">
     </td>
   </tr>
 
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">
-      <img src="assets/examples/03.jpg" alt="Image 1" style="height: 220px;">
+      <img src="assets/examples/03.jpg" alt="Image 3" style="height: 220px;">
     </td>
     <td style="text-align: center; vertical-align: middle;">
-      <video controls style="height: 220px; ">
-         <source src="./assets/examples/003_viz.mp4" type="video/mp4">
-      </video>
+      <img src="assets/examples/03.gif" alt="Image 3" style="height: 220px;">
     </td>
   </tr>
 
   <tr>
     <td style="text-align: center; vertical-align: middle;">
-      <img src="assets/examples/04.jpg" alt="Image 1" style="height: 240px;">
+      <img src="assets/examples/04.jpg" alt="Image 4" style="height: 240px;">
     </td>
     <td style="text-align: center; vertical-align: middle;">
-      <video controls style="height: 240px; ">
-         <source src="./assets/examples/004_viz.mp4" type="video/mp4">
-      </video>
+      <img src="assets/examples/04.gif" alt="Image 4" style="height: 240px;">
+    </td>
+  </tr>
+
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">
+      <img src="assets/examples/05.jpg" alt="Image 5" style="height: 160px;">
+    </td>
+    <td style="text-align: center; vertical-align: middle;">
+      <img src="assets/examples/05.gif" alt="Image 5" style="height: 160px;">
     </td>
   </tr>
 </table>
