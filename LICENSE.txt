@@ -199,3 +199,7 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+   # Part of source code from: https://github.com/Wan-Video/Wan2.1
+   # Copyright 2024-2025 The Alibaba Wan Team Authors. All rights reserved.
+   # SPDX-License-Identifier: Apache-2.0
