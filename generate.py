@@ -1,5 +1,7 @@
 # Copyright 2024-2025 The Alibaba Wan Team Authors. All rights reserved.
 # Copyright (c) 2024-2025 Bytedance Ltd. and/or its affiliates
+# SPDX-License-Identifier: Apache-2.0
+
 from wan.utils.motion import get_tracks_inference
 from wan.utils.utils import cache_video, cache_image, str2bool
 from wan.utils.prompt_extend import DashScopePromptExpander, QwenPromptExpander
