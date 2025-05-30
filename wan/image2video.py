@@ -1,5 +1,6 @@
 # Copyright 2024-2025 The Alibaba Wan Team Authors. All rights reserved.
 # Copyright (c) 2024-2025 Bytedance Ltd. and/or its affiliates
+# SPDX-License-Identifier: Apache-2.0
 import gc
 import logging
 import math
