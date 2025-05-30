@@ -20,6 +20,39 @@ This is the repo for Wan2.1 ATI (Any Trajectory Instruction for Controllable Vid
 
 ATI requires a same environment as offical Wan 2.1. Follow the instruction of INSTALL.md (Wan2.1).
 
+```
+git clone https://github.com/bytedance/ATI.git
+cd ATI
+```
+
+Install packages
+
+```
+pip install .
+```
+
+First you need to download the 14B original model of Wan2.1.
+
+```
+huggingface-cli download Wan-AI/Wan2.1-I2V-14B-480P --local-dir ./Wan2.1-I2V-14B-480P
+```
+
+Then download ATI-Wan model from our huggingface repo.
+
+```
+huggingface-cli download bytedance-research/ATI --local-dir ./Wan2.1-ATI-14B-480P
+```
+
+Finally, copy VAE, T5 and other misc checkpoint from origin Wan2.1 folder to ATI checkpoint location
+
+```
+cp ./Wan2.1-I2V-14B-480P/Wan2.1_VAE.pth ./Wan2.1-ATI-14B-480P/
+cp ./Wan2.1-I2V-14B-480P/models_t5_umt5-xxl-enc-bf16.pth ./Wan2.1-ATI-14B-480P/
+cp ./Wan2.1-I2V-14B-480P/models_clip_open-clip-xlm-roberta-large-vit-huge-14.pth ./Wan2.1-ATI-14B-480P/
+cp -r ./Wan2.1-I2V-14B-480P/xlm-roberta-large ./Wan2.1-ATI-14B-480P/
+cp -r ./Wan2.1-I2V-14B-480P/google ./Wan2.1-ATI-14B-480P/
+```
+
 ## Run
 
 Frist download the ATI Wan2.1 from our HuggingFace Page.
@@ -27,7 +60,7 @@ Frist download the ATI Wan2.1 from our HuggingFace Page.
 We provide a demo sript to run ATI.
 
 ```
-bash run_example.sh -p examples/test.yaml -c /path/to/Wan2.1-ATI-14B-480P -o samples
+bash run_example.sh -p examples/test.yaml -c ./Wan2.1-ATI-14B-480P -o samples
 ```
 where `-p` is the path to the config file, `-c` is the path to the checkpoint, `-o` is the path to the output directory, `-g` defines the number of gpus to use (if unspecificed, all avalible GPUs will be used; if `1` is given, will run on single process mode).
 
