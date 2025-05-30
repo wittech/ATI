@@ -181,4 +181,13 @@ then open this url [localhost:5000](http://localhost:5000/) in the browser. Note
 
 ## Citation
 Please cite our paper if you find our work useful:
+```
+@article{wang2025ati,
+  title={{ATI}: Any Trajectory Instruction for Controllable Video Generation},
+  author={Wang, Angtian and Huang, Haibin and Fang, Zhiyuan and Yang, Yiding, and Ma, Chongyang}
+  journal={arXiv preprint},
+  volume={arXiv:2505.22944},
+  year={2025}
+}
+```
 
