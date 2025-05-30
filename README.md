@@ -55,8 +55,6 @@ cp -r ./Wan2.1-I2V-14B-480P/google ./Wan2.1-ATI-14B-480P/
 
 ## Run
 
-Frist download the ATI Wan2.1 from our HuggingFace Page.
-
 We provide a demo sript to run ATI.
 
 ```
