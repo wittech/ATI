@@ -27,6 +27,8 @@ ATI requires a same environment as offical Wan 2.1. Follow the instruction of IN
 
 ## Run
 
+Frist download the ATI Wan2.1 from our HuggingFace Page.
+
 We provide a demo sript to run ATI.
 
 ```
