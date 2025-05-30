@@ -1,0 +1,15 @@
+- image: examples/images/fish.jpg
+  text: "A tranquil koi pond edged by mossy stone, with lily pads drifting on the surface and several orange\u2011and\u2011white koi fish gliding beneath."
+  track: examples/tracks/fish.pth
+- image: examples/images/human.jpg  
+  text: "An human facing the camera in an cyberbank style dress."
+  track: examples/tracks/human.pth
+- image: examples/images/sea.png
+  text: Surreal scene of a colossal ocean wave curling inside an opulent vaulted gallery, two tiny surfers riding its emerald face.
+  track: examples/tracks/sea.pth
+- image: examples/images/deco.png
+  text: A gleaming gold necklace with elongated links gently frames a U-shaped pendant encrusted with delicate, shimmering stones. The pendant’s bold, modern design contrasts beautifully with the fine details of its sparkling accents. Set against a gradient background of tranquil blues, the piece exudes both sophistication and understated luxury.
+  track: examples/tracks/deco.pth
+- image: examples/images/giraffe.jpg
+  text: "A close-up portrait of a giraffe’s head and long neck against a soft-focus woodland backdrop."  
+  track: examples/tracks/giraffe.pth

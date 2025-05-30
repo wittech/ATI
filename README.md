@@ -1,0 +1,155 @@
+# ATI: Any Trajectory Instruction for Controllable Video Generation
+
+<div align="center">
+  
+[![arXiv](https://img.shields.io/badge/arXiv%20paper-2502.11079-b31b1b.svg)]()&nbsp;
+[![project page](https://img.shields.io/badge/Project_page-ATI-green)](https://anytraj.github.io/)&nbsp;
+<a href=""><img src="https://img.shields.io/static/v1?label=%F0%9F%A4%97%20Hugging%20Face&message=Model&color=orange"></a>
+</div>
+
+
+> [**ATI: Any Trajectory Instruction for Controllable Video Generation**](https://anytraj.github.io/)<br>
+> [Angtian Wang](https://angtianwang.github.io/), [Haibin Huang](https://brotherhuang.github.io/), Jacob Zhiyuan Fang, [Yiding Yang](https://ihollywhy.github.io/), [Chongyang Ma](http://www.chongyangma.com/), 
+> <br>Intelligent Creation Team, ByteDance<br>
+
+<div align="center">
+   <video controls style="max-width:100%; height:auto;">
+      <source src="./assets/Teaser.mp4" type="video/mp4">
+      Your browser doesn’t support HTML5 video. Browser the video in assets/Teaser.mp4.
+   </video>
+</div>
+
+This is the repo for Wan2.1 ATI (Any Trajectory Instruction for Controllable Video Generation), a trajectory-based motion control framework that unifies object, local and camera movements in video generation. This repo is based on [Wan2.1 offical implementation](https://github.com/Wan-Video/Wan2.1).
+
+## Install
+
+ATI requires a same environment as offical Wan 2.1. Follow the instruction of INSTALL.md (Wan2.1).
+
+## Run
+
+We provide a demo sript to run ATI.
+
+```
+bash run_example.sh -p examples/test.yaml -c /path/to/Wan2.1-ATI-14B-480P -o samples
+```
+where `-p` is the path to the config file, `-c` is the path to the checkpoint, `-o` is the path to the output directory, `-g` defines the number of gpus to use (if unspecificed, all avalible GPUs will be used; if `1` is given, will run on single process mode).
+
+Once finished, you will expect to fine:
+- `samples/outputs` for the raw output videos.
+- `samples/images_tracks` shows the input image togather with the user specified trajectories.
+- `samples/outputs_vis` shows the output videos togather with the user specified trajectories.
+
+Expected results:
+
+
+<table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc;">
+  <tr>
+    <th style="text-align: center;">
+      <strong>Input Image & Trajectory</strong>
+    </th>
+    <th style="text-align: center;">
+      <strong>Generated Videos (Superimposed Trajectories)</strong>
+    </th>
+  </tr>
+
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">
+      <img src="assets/examples/00.jpg" alt="Image 1" style="height: 240px;">
+    </td>
+    <td style="text-align: center; vertical-align: middle;">
+      <video controls style="height: 240px; ">
+         <source src="./assets/examples/000_viz.mp4" type="video/mp4">
+      </video>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">
+      <img src="assets/examples/01.jpg" alt="Image 1" style="height: 240px;">
+    </td>
+    <td style="text-align: center; vertical-align: middle;">
+      <video controls style="height: 240px; ">
+         <source src="./assets/examples/001_viz.mp4" type="video/mp4">
+      </video>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">
+      <img src="assets/examples/02.jpg" alt="Image 1" style="height: 160px;">
+    </td>
+    <td style="text-align: center; vertical-align: middle;">
+      <video controls style="height: 160px; ">
+         <source src="./assets/examples/002_viz.mp4" type="video/mp4">
+      </video>
+    </td>
+  </tr>
+
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">
+      <img src="assets/examples/03.jpg" alt="Image 1" style="height: 220px;">
+    </td>
+    <td style="text-align: center; vertical-align: middle;">
+      <video controls style="height: 220px; ">
+         <source src="./assets/examples/003_viz.mp4" type="video/mp4">
+      </video>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">
+      <img src="assets/examples/04.jpg" alt="Image 1" style="height: 240px;">
+    </td>
+    <td style="text-align: center; vertical-align: middle;">
+      <video controls style="height: 240px; ">
+         <source src="./assets/examples/004_viz.mp4" type="video/mp4">
+      </video>
+    </td>
+  </tr>
+</table>
+
+
+## Create You Own Trajectory
+
+We provide an interactive tool that allow users to draw and edit trajectories on their images. 
+
+1. First run:
+```
+cd tools/trajectory_editor
+python3 app.py
+```
+then open this url [localhost:5000](http://localhost:5000/) in the browser. Note if you run the editor on the server, you need to replace `localhost` with the server's IP address.
+
+2. Get the interface shown below, then click **Choose File** to open a local image.  
+![Interface Screenshot](assets/editor0.PNG)
+
+3. Available trajectory functions:  
+![Trajectory Functions](assets/editor1.PNG)
+
+   a. **Free Trajectory**: Click and then drag with the mouse directly on the image.  
+   b. **Circular (Camera Control)**:  
+      - Place a circle on the image, then drag to set its size for frame 0.  
+      - Place a few (3–4 recommended) track points on the circle.  
+      - Drag the radius control to achieve zoom-in/zoom-out effects.  
+
+   c. **Static Point**: A point that remains stationary over time.  
+
+   *Note:* Pay attention to the progress bar in the box to control motion speed.  
+   ![Progress Control](assets/editor2.PNG)
+
+4. **Trajectory Editing**: Select a trajectory here, then delete, edit, or copy it. In edit mode, drag the trajectory directly on the image. The selected trajectory is highlighted by color.  
+![Trajectory Editing](assets/editor3.PNG)
+
+5. **Camera Pan Control**: Enter horizontal (X) or vertical (Y) speed (pixels per frame). Positive X moves right; negative X moves left. Positive Y moves down; negative Y moves up. Click **Add to Selected** to apply to the current trajectory, or **Add to All** to apply to all trajectories. The selected points will gain a constant pan motion on top of their existing movement.  
+![Camera Pan Control](assets/editor4.PNG)
+
+6. **Important:** After editing, click **Store Tracks** to save. Each image (not each trajectory) must be saved separately after drawing all trajectories.  
+![Store Tracks](assets/editor5.PNG)
+
+7. Once all edits are complete, locate the `videos_example` folder in the **Trajectory Editor**.
+
+
+## Citation
+Please cite our paper if you find our work useful:
+
