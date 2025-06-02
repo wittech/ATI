@@ -17,18 +17,18 @@
 This is the repo for Wan2.1 ATI (Any Trajectory Instruction for Controllable Video Generation), a trajectory-based motion control framework that unifies object, local and camera movements in video generation. This repo is based on [Wan2.1 offical implementation](https://github.com/Wan-Video/Wan2.1).
 
 Compared with the original Wan2.1. We add the following files:
-- wan/modules/motion_patch.py          Trajectory instruction kernal module
-- wan/utils/motion.py                  Inference dataloader utils
-- tools/plot_user_inputs.py            Visualizer for user input trajectory
-- tools/visualize_trajectory.py        Visualizer for generated video
-- tools/trajectory_editor/             Interactive trajectory editor
-- examples/                            Test examples
-- run_example.sh                       Easy launch script
+- wan/modules/motion_patch.py          | Trajectory instruction kernal module
+- wan/utils/motion.py                  | Inference dataloader utils
+- tools/plot_user_inputs.py            | Visualizer for user input trajectory
+- tools/visualize_trajectory.py        | Visualizer for generated video
+- tools/trajectory_editor/             | Interactive trajectory editor
+- examples/                            | Test examples
+- run_example.sh                       | Easy launch script
 
 We modified the following files:
-- wan/image2video.py                   Add blocks to load and parse trajectory  #L256
-- wan/configs/__init__.py              Config the ATI etc.
-- generate.py                          Add an entry to load yaml format inference examples
+- wan/image2video.py                   | Add blocks to load and parse trajectory  #L256
+- wan/configs/__init__.py              | Config the ATI etc.
+- generate.py                          | Add an entry to load yaml format inference examples
 
 ## Install
 
