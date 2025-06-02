@@ -42,3 +42,4 @@ poetry.lock
 !assets/Teaser.mp4
 !tools/
 !examples/
+!tools/trajectory_editor/templates/index.html
