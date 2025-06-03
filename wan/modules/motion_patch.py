@@ -66,7 +66,7 @@ def merge_final(vert_attr: torch.Tensor, weight: torch.Tensor, vert_assign: torc
     else:
         assert vert_attr.shape[1] > vert_assign.max()
         sel_attr = ind_sel(
-            vert_attr[:, *(None,) * (target_dim - 1)], vert_assign.type(torch.long), dim=target_dim
+            vert_attr[(slice(None),) + (None,)*(target_dim-1)], vert_assign.type(torch.long), dim=target_dim
         )
 
     # [b(optional), w, h, M]
