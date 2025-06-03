@@ -90,7 +90,7 @@ def upload_image():
     img.save(os.path.join(IMAGES_DIR_OUT, fname))
 
     return jsonify({
-        'image_url': f"/{STATIC_BASE}/images/{fname}",
+        'image_url': f"{STATIC_BASE}/images/{fname}",
         'image_id': idx,
         'ext': ext,
         'orig_width': orig_w,
@@ -141,7 +141,7 @@ def store_tracks():
         overlay_file = f"{image_id:02d}.png"
         return jsonify({
             'status': 'ok',
-            'overlay_url': f"/{STATIC_BASE}/images_tracks/{overlay_file}"
+            'overlay_url': f"{STATIC_BASE}/images_tracks/{overlay_file}"
         })
 
     new_tracks = np.stack(arrs, axis=0)  # (T_new, FIXED_LENGTH,1,4)
@@ -179,11 +179,9 @@ def store_tracks():
 
     # Update YAML (unchanged)
     entry = {
-        "image": os.path.join('projects/video_motion/files',
-                              BASE_DIR, "images", f"{image_id:02d}.{ext}"),
+        "image": os.path.join(f"tools/trajectory_editor/{BASE_DIR}/images/{image_id:02d}.{ext}"),
         "text": None,
-        "track": os.path.join('projects/video_motion/files',
-                              BASE_DIR, "tracks", f"{image_id:02d}.pth")
+        "track": os.path.join(f"tools/trajectory_editor/{BASE_DIR}/tracks/{image_id:02d}.pth")
     }
     if os.path.exists(YAML_PATH):
         with open(YAML_PATH) as yf:
@@ -203,7 +201,7 @@ def store_tracks():
 
     return jsonify({
         'status': 'ok',
-        'overlay_url': f"/{STATIC_BASE}/images_tracks/{overlay_file}"
+        'overlay_url': f"{STATIC_BASE}/images_tracks/{overlay_file}"
     })
 
 
