@@ -30,6 +30,16 @@ We modified the following files:
 - wan/configs/__init__.py              | Config the ATI etc.
 - generate.py                          | Add an entry to load yaml format inference examples
 
+## Community Works
+### ComfyUI
+Thanks for Kijai develop the ComfyUI nodes for ATI:
+[https://github.com/kijai/ComfyUI-WanVideoWrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
+
+FP8 quant Huggingface Mode: [https://huggingface.co/Kijai/WanVideo_comfy/blob/main/Wan2_1-I2V-ATI-14B_fp8_e4m3fn.safetensors](https://huggingface.co/Kijai/WanVideo_comfy/blob/main/Wan2_1-I2V-ATI-14B_fp8_e4m3fn.safetensors)
+
+### Guideline
+Guideline by Benji: [https://www.youtube.com/watch?v=UM35z2L1XbI](https://www.youtube.com/watch?v=UM35z2L1XbI)
+
 ## Install
 
 ATI requires a same environment as offical Wan 2.1. Follow the instruction of INSTALL.md (Wan2.1).
