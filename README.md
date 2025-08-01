@@ -171,7 +171,7 @@ Important note: **app.py** should only be run on **localhost**, as running it on
 cd tools/trajectory_editor
 python3 app.py
 ```
-then open this url [localhost:5000](http://localhost:5000/) in the browser. Note if you run the editor on the server, you need to replace `localhost` with the server's IP address.
+then open this url [localhost:5000](http://localhost:5000/) in the browser. 
 
 2. Get the interface shown below, then click **Choose File** to open a local image.  
 ![Interface Screenshot](assets/editor0.PNG)
