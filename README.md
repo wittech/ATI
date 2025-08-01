@@ -164,6 +164,7 @@ Expected results:
 ## Create You Own Trajectory
 
 We provide an interactive tool that allow users to draw and edit trajectories on their images. 
+Important note: **app.py** should only be run on **localhost**, as running it on a remote server may pose security risks.
 
 1. First run:
 ```
