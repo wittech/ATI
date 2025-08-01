@@ -206,5 +206,29 @@ def store_tracks():
     })
 
 
+def ensure_localhost():
+    """
+    Verify that the application is running on localhost.
+    This inspects the host's IP addresses and exits if any non-loopback
+    interface is found. If the hostname cannot be resolved, the check is skipped.
+    """
+    import sys
+    import socket
+    try:
+        addresses = {info[4][0]
+                     for info in socket.getaddrinfo(socket.gethostname(), None)}
+    except socket.gaierror:
+        # Hostname not resolvable—skip this check
+        return
+
+    for addr in addresses:
+        if addr not in ("127.0.0.1", "::1"):
+            sys.exit(
+                "SecurityError: The application must run on localhost (127.0.0.1); "
+                "other network interfaces pose security risks."
+            )
+
+
 if __name__ == '__main__':
-    app.run()
+    ensure_localhost()
+    app.run(host="127.0.0.1", port=5000)
