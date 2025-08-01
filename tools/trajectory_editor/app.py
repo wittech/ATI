@@ -23,6 +23,7 @@ import matplotlib
 import argparse
 matplotlib.use('Agg')
 
+# Warning: app.py shall only run on localhost, as running on remote server may cause sercuity issue
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
 
