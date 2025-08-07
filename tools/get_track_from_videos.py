@@ -8,10 +8,6 @@ import math
 import io
 
 
-TAP_MODELS = {
-    'bootstapir': 'projects/video_any/debug/checkpoints/bootstapir_checkpoint_v2.pt',
-}
-
 QUANT_MULTI = 8
 def array_to_npz_bytes(arr, path, compressed=True, quant_multi=QUANT_MULTI):
     # pack into uint16 as before
