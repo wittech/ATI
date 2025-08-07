@@ -25,6 +25,8 @@ cache
 __pycache__/
 storage/
 samples/
+samples_motion_transfer/
+outputs_motion_transfer/
 !.gitignore
 !requirements.txt
 .DS_Store
@@ -43,3 +45,4 @@ poetry.lock
 !tools/
 !examples/
 !tools/trajectory_editor/templates/index.html
+!examples/motion_transfer/0.mp4

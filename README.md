@@ -12,6 +12,8 @@
 > [Angtian Wang](https://angtianwang.github.io/), [Haibin Huang](https://brotherhuang.github.io/), Jacob Zhiyuan Fang, [Yiding Yang](https://ihollywhy.github.io/), [Chongyang Ma](http://www.chongyangma.com/)
 > <br>Intelligent Creation Team, ByteDance<br>
 
+**Highlight: ATI motion transfer tools + demo is added. Scroll down to see the updates**
+
 [![Watch the video](assets/thumbnail.jpg)](https://youtu.be/76jjPT0f8Hs)
 
 This is the repo for Wan2.1 ATI (Any Trajectory Instruction for Controllable Video Generation), a trajectory-based motion control framework that unifies object, local and camera movements in video generation. This repo is based on [Wan2.1 offical implementation](https://github.com/Wan-Video/Wan2.1).
@@ -22,6 +24,7 @@ Compared with the original Wan2.1. We add the following files:
 - tools/plot_user_inputs.py            | Visualizer for user input trajectory
 - tools/visualize_trajectory.py        | Visualizer for generated video
 - tools/trajectory_editor/             | Interactive trajectory editor
+- tools/get_track_from_videos.py       | Motion extraction tools for ATI motion transfer 
 - examples/                            | Test examples
 - run_example.sh                       | Easy launch script
 
@@ -156,6 +159,50 @@ Expected results:
     </td>
     <td style="text-align: center; vertical-align: middle;">
       <img src="assets/examples/05.gif" alt="Image 5" style="height: 160px;">
+    </td>
+  </tr>
+</table>
+
+## Motion Transfer
+
+![Motion Transfer](assets/MotionTransfer.jpg)
+ATI can mimic a video by extracting its motion dynamics along with its first-frame image. Moreover, by leveraging powerful image-editing tools, it also enables "video-editing" capabilities.
+
+First, extract motions from videos using the following script:
+```
+python3 tools/get_track_from_videos.py --source_folder examples/motion_transfer/ --save_folder samples_motion_transfer/
+```
+
+Then run ATI inference
+```
+bash run_example.sh -p samples_motion_transfer/test.yaml -c ./Wan2.1-ATI-14B-480P -o outputs_motion_transfer
+```
+
+Expected result
+
+<table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc;">
+  <tr>
+    <th style="text-align: center;">
+      <strong>Reference Video (for Extracting Motion)</strong>
+    </th>
+    <th style="text-align: center;">
+      <strong>First Frame Image</strong>
+    </th>
+    <th style="text-align: center;">
+      <strong>Generated Video</strong>
+    </th>
+  </tr>
+
+
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">
+      <img src="assets/examples/RV_0.gif" alt="Motion Transfer Video" style="height: 160px;">
+    </td>
+    <td style="text-align: center; vertical-align: middle;">
+      <img src="assets/examples/RI_0.png" alt="Motion Transfer Image" style="height: 160px;">
+    </td>
+    <td style="text-align: center; vertical-align: middle;">
+      <img src="assets/examples/G_0.png" alt="Motion Transfer Output" style="height: 160px;">
     </td>
   </tr>
 </table>
