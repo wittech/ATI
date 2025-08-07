@@ -202,7 +202,7 @@ Expected result
       <img src="assets/examples/RI_0.png" alt="Motion Transfer Image" style="height: 160px;">
     </td>
     <td style="text-align: center; vertical-align: middle;">
-      <img src="assets/examples/G_0.png" alt="Motion Transfer Output" style="height: 160px;">
+      <img src="assets/examples/G_0.gif" alt="Motion Transfer Output" style="height: 160px;">
     </td>
   </tr>
 </table>
