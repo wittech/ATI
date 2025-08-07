@@ -39,7 +39,6 @@ def parse_to_list(text: str) -> List[List[int]]:
     return result
 
 
-
 def load_video_to_frames(
     video_path: str,
     preset_fps: float = 24,
@@ -192,10 +191,8 @@ class TrackAnyPoint():
 
         # Run inference. The forward now returns a mapping, e.g., with key 'pred_tracks'.
         tracks, visibles = self.model(video, tracks)
-        # Extract predicted tracks; expected shape is (B, T, N, 2)
         tracks = convert_grid_coordinates(tracks, (W, H), (w_ori, h_ori),)
 
-        # [H, W, T, 2] => [T, H, W, 2]
         return torch.cat([tracks, visibles.unsqueeze(-1)], dim=-1).cpu().numpy()
 
 
